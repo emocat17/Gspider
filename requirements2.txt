@@ -3,3 +3,5 @@ scrapy
 pandas 
 feedparser 
 openpyxl
+
+# other packages
