@@ -1,0 +1,31 @@
+name: build docker image master
+on:
+  push:
+    branches: 
+    - master
+    paths:
+    - .github/workflows/**
+    - gerapy/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Source
+      uses: actions/checkout@v1
+    - name: Docker Login
+      run: docker login -u germey -p ${{ secrets.DOCKERHUB_LOGIN_PASSWORD }}
+    - name: Setup Node.js
+      uses: actions/setup-node@v2.3.0
+      with:
+        version: 14.x
+    - name: Build Frontend Source
+      run: |
+        cd gerapy/client
+        npm install -g yarn
+        yarn 
+        yarn build
+    - name: Build the Docker Image
+      run: |
+        docker build -t germey/gerapy:master .
+    - name: Push the Docker Image
+      run: docker push germey/gerapy:master
