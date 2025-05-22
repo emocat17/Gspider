@@ -1,0 +1,2 @@
+[scrapy]
+settings = arxiv_scraper.settings

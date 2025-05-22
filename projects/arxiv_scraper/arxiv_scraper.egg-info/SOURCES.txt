@@ -1,0 +1,13 @@
+setup.py
+arxiv_scraper/__init__.py
+arxiv_scraper/items.py
+arxiv_scraper/middlewares.py
+arxiv_scraper/pipelines.py
+arxiv_scraper/settings.py
+arxiv_scraper.egg-info/PKG-INFO
+arxiv_scraper.egg-info/SOURCES.txt
+arxiv_scraper.egg-info/dependency_links.txt
+arxiv_scraper.egg-info/entry_points.txt
+arxiv_scraper.egg-info/top_level.txt
+arxiv_scraper/spiders/__init__.py
+arxiv_scraper/spiders/arxiv_spider.py

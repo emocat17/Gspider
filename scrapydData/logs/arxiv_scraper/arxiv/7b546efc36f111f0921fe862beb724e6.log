@@ -1,0 +1,92 @@
+2025-05-22 17:45:25 [scrapy.utils.log] INFO: Scrapy 2.13.0 started (bot: arxiv_scraper)
+2025-05-22 17:45:26 [scrapy.utils.log] INFO: Versions:
+{'lxml': '5.4.0',
+ 'libxml2': '2.11.9',
+ 'cssselect': '1.3.0',
+ 'parsel': '1.10.0',
+ 'w3lib': '2.3.1',
+ 'Twisted': '24.11.0',
+ 'Python': '3.11.11 | packaged by Anaconda, Inc. | (main, Dec 11 2024, '
+           '16:34:19) [MSC v.1929 64 bit (AMD64)]',
+ 'pyOpenSSL': '25.1.0 (OpenSSL 3.5.0 8 Apr 2025)',
+ 'cryptography': '45.0.2',
+ 'Platform': 'Windows-10-10.0.19045-SP0'}
+2025-05-22 17:45:26 [arxiv] INFO: Spider initialized with keyword: 'zero trust', start_date: 2020-01-01
+2025-05-22 17:45:26 [scrapy.addons] INFO: Enabled addons:
+[]
+2025-05-22 17:45:26 [scrapy.extensions.telnet] INFO: Telnet Password: 1bc5903b2f36a8aa
+2025-05-22 17:45:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2025-05-22 17:45:26 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'AUTOTHROTTLE_MAX_DELAY': 10,
+ 'AUTOTHROTTLE_START_DELAY': 1,
+ 'AUTOTHROTTLE_TARGET_CONCURRENCY': 4.0,
+ 'BOT_NAME': 'arxiv_scraper',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'D:\\GitWorks\\Gspider\\scrapydData\\logs\\arxiv_scraper\\arxiv\\7b546efc36f111f0921fe862beb724e6.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'arxiv_scraper.spiders',
+ 'SPIDER_MODULES': ['arxiv_scraper.spiders']}
+2025-05-22 17:45:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-05-22 17:45:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-05-22 17:45:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['arxiv_scraper.pipelines.ArxivFilesPipeline',
+ 'arxiv_scraper.pipelines.ExcelPipeline']
+2025-05-22 17:45:26 [scrapy.core.engine] INFO: Spider opened
+2025-05-22 17:45:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-05-22 17:45:26 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2025-05-22 17:45:26 [arxiv] INFO: Initial request URL: http://export.arxiv.org/api/query?search_query=all%3A%22zero+trust%22&start=0&max_results=1000&sortBy=submittedDate&sortOrder=ascending
+2025-05-22 17:45:28 [arxiv] INFO: Parsing response from: http://export.arxiv.org/api/query?search_query=all%3A%22zero+trust%22&start=0&max_results=1000&sortBy=submittedDate&sortOrder=ascending
+2025-05-22 17:46:04 [arxiv] INFO: Processed 130 relevant entries from this page (total fetched: 131).
+2025-05-22 17:46:04 [arxiv] INFO: Fetched 131 entries, less than max_results (1000), assuming end of results. Stopping pagination.
+2025-05-22 17:46:26 [scrapy.extensions.logstats] INFO: Crawled 50 pages (at 50 pages/min), scraped 49 items (at 49 items/min)
+2025-05-22 17:47:26 [scrapy.extensions.logstats] INFO: Crawled 99 pages (at 49 pages/min), scraped 97 items (at 48 items/min)
+2025-05-22 17:48:05 [scrapy.core.engine] INFO: Closing spider (finished)
+2025-05-22 17:48:06 [arxiv] INFO: Excel spreadsheet saved to Data\zero trust\zero trust_papers.xlsx
+2025-05-22 17:48:06 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 29708,
+ 'downloader/request_count': 131,
+ 'downloader/request_method_count/GET': 131,
+ 'downloader/response_bytes': 189085789,
+ 'downloader/response_count': 131,
+ 'downloader/response_status_count/200': 131,
+ 'elapsed_time_seconds': 159.259317,
+ 'file_count': 130,
+ 'file_status_count/downloaded': 130,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2025, 5, 22, 9, 48, 6, 140131, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 315530,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 130,
+ 'items_per_minute': 49.05660377358491,
+ 'log_count/INFO': 17,
+ 'response_received_count': 131,
+ 'responses_per_minute': 49.43396226415094,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2025, 5, 22, 9, 45, 26, 880814, tzinfo=datetime.timezone.utc)}
+2025-05-22 17:48:06 [scrapy.core.engine] INFO: Spider closed (finished)
