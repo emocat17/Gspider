@@ -37,7 +37,7 @@ cd gerapy/client
 npm install 
 ```
 
-- 修改前段后部署：
+- 修改前端后部署实现页面展示：
 ```sh
 npm run build
 ```
