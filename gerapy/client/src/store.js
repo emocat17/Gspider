@@ -42,6 +42,7 @@ export default new Vuex.Store({
       },
       home: {
         status: "/api/index/status",
+        hostInfos:"api/index/host/infos"
       },
       project: {
         index: "/api/project/index",

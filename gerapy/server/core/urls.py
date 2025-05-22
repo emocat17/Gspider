@@ -44,4 +44,6 @@ urlpatterns = [
     url(r'^api/task/(\d+)/remove', views.task_remove, name='task_remove'),
     url(r'^api/task/(\d+)/status', views.task_status, name='task_status'),
     url(r'^api/render', views.render_html, name='render_html'),
+    url(r'^api/index/host/infos', views.index_host_infos, name='index_host_infos'),
+
 ]

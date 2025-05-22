@@ -9,6 +9,7 @@ GitPython
 itemadapter
 psutil
 pymongo
+psutil
 PyMySQL
 scrapyd
 scrapyd-client

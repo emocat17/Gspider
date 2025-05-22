@@ -974,3 +974,39 @@ def render_html(request):
         response.encoding = response.apparent_encoding
         html = process_html(response.text)
         return HttpResponse(html)
+
+
+import psutil
+@log_exception()
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def index_host_infos(request):
+    """
+    index host infos
+    :param request: request object
+    :return: json
+    """
+    if request.method == 'GET':
+
+        def get_host_info():
+            memory = psutil.virtual_memory()
+            disk = psutil.disk_usage('/')
+            data = {
+                'title': None,
+                'first': {'name': 'CPU', 'data': psutil.cpu_percent(interval=1)},
+                'second': {'name': '内存', 'data': memory.percent},
+                'three': {'name': '磁盘', 'data': disk.percent},
+                'four': {'name': '内存使用量', 'data': '{} GB / {} GB'.format(
+                    round(memory.used / 1024 / 1024 / 1024, 2), round(memory.total / 1024 / 1024 / 1024, 2))},
+                'five': {'name': '磁盘使用量', 'data': '{} GB / {} GB'.format(
+                    round(disk.used / 1024 / 1024 / 1024, 2), round(disk.total / 1024 / 1024 / 1024, 2))},
+            }
+            ip_adds = psutil.net_if_addrs()
+            for key in ip_adds.keys():
+                if '以太网' in key:
+                    data['title'] = ip_adds[key][1].address
+                    break
+            return data
+
+        data = [get_host_info()]
+        return JsonResponse({'host_infos': data})

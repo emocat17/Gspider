@@ -25,13 +25,8 @@ python manage.py createsuperuser  # 创建超级管理员
 # 5、运行服务1
 ```sh
 python manage.py runserver  # 启动服务：终端1
-scrapyd # 终端2
-```
-
-# 5、运行服务2
-```sh
 cd scrapydData
-scrapyd # 运行scrapyd-client服务
+scrapyd # 终端2
 ```
 
 
@@ -39,7 +34,10 @@ scrapyd # 运行scrapyd-client服务
 - 前提是安装nodejs 
 ```sh
 cd gerapy/client
-npm install -g pnpm
-pnpm install 
+npm install 
 ```
 
+- 修改前段后部署：
+```sh
+npm run build
+```
