@@ -36,8 +36,10 @@ scrapyd # 运行scrapyd-client服务
 
 
 # 6、前端依赖
+- 前提是安装nodejs 
 ```sh
 cd gerapy/client
-npm install # 前提是安装nodejs 
-
+npm install -g pnpm
+pnpm install 
 ```
+
