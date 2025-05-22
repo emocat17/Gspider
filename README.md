@@ -31,7 +31,7 @@ scrapyd # 终端2
 # 5、运行服务2
 ```sh
 cd scrapydData
-scrapyd
+scrapyd # 运行scrapyd-client服务
 ```
 
 
